@@ -1,128 +1,377 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b132b">
-<title>HELP MALAK & FAMILY</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0b132b;--panel:#1c2541;--line:#3a506b;--mint:#5bc0be;--green:#07845f;--muted:#cbd5e1}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:#fff;font-family:"Cairo",sans-serif;line-height:1.8}
-a{color:inherit}
-.wrap{width:min(940px,calc(100% - 32px));margin:auto}
-header{position:sticky;top:0;z-index:5;background:#1c2541;border-bottom:1px solid var(--line)}
-.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.logo{font-weight:800;color:var(--mint);letter-spacing:.3px}
-.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;padding:11px 20px;text-decoration:none;font:inherit;font-weight:800;cursor:pointer}
-.green{background:var(--green);color:white}
-.outline{border:1px solid var(--line);background:transparent;color:white}
-.hero{text-align:center;padding:58px 0 40px;background:radial-gradient(ellipse at top,#263a60,var(--bg) 70%)}
-.tag{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:4px 14px;color:var(--mint);margin-bottom:14px}
-h1{font-family:"Poppins","Cairo",sans-serif;font-size:clamp(1.8rem,5vw,2.8rem);line-height:1.35;margin-bottom:18px}
-.hero p{max-width:720px;margin:0 auto 22px;color:var(--muted)}
-.hero-image{width:100%;max-width:760px;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);border-radius:16px;background:var(--panel);margin:20px auto;display:block}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,4vw,32px);margin:24px auto;box-shadow:0 12px 28px #0003}
-h2{color:var(--mint);font-size:1.55rem;margin-bottom:14px}
-p{margin-bottom:13px}
-.muted{color:var(--muted)}
-.stats{background:var(--bg);border:1px solid var(--line);padding:20px;border-radius:14px;margin-bottom:24px}
-.statrow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;margin-bottom:10px}
-.track{height:13px;background:var(--line);border-radius:20px;overflow:hidden}
-.fill{height:100%;width:.01%;background:linear-gradient(90deg,var(--green),var(--mint))}
-.note{font-size:.88rem;color:var(--muted);margin-top:10px}
-.story{background:var(--bg);border-right:4px solid var(--mint);padding:18px;border-radius:12px;margin-top:18px}
-.donate{text-align:center;background:var(--bg);border:1px solid var(--green);padding:26px;border-radius:14px}
-.donate h3{font-size:1.45rem;margin-bottom:8px}
-.donate .btn{margin:12px 0}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--bg);border:1px solid var(--line);border-radius:12px}
-.notice{background:#332b19;border:1px solid #80672d;color:#ffedbd;border-radius:12px;padding:15px}
-footer{text-align:center;background:var(--panel);border-top:1px solid var(--line);padding:28px 16px;color:var(--muted)}
-[dir=ltr] body{font-family:"Poppins",sans-serif}
-[dir=ltr] .story{direction:rtl;text-align:right}
-@media(max-width:560px){.logo{font-size:.86rem}.btn{padding:9px 13px;font-size:.9rem}.hero{padding-top:40px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE | حملة مساعدة عائلية</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body {
+      background: linear-gradient(180deg, #0b1622 0%, #102033 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      max-width: 860px;
+      margin: 0 auto;
+      position: sticky;
+      top: 0;
+      background: rgba(11, 22, 34, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
+    .btn-donate-sm {
+      background: #109e63;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .btn-lang {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .brand { color: #67d4a5; font-weight: bold; font-size: 14px; letter-spacing: 0.5px; }
+    main { max-width: 780px; margin: 0 auto; padding: 28px 18px 60px; text-align: center; }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      color: #b8c7d9;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 25px; font-weight: 800; margin-bottom: 14px; line-height: 1.4; }
+    .subtitle { color: #cbd5e1; font-size: 16px; margin-bottom: 22px; }
+    .main-image {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+    .main-image img { width: 100%; max-height: 450px; object-fit: cover; display: block; }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      background: #109e63;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 17px;
+      font-weight: bold;
+      flex: 1 1 240px;
+      max-width: 340px;
+    }
+    .btn-share {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      flex: 1 1 180px;
+      max-width: 240px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 22px;
+      text-align: start;
+      margin-bottom: 20px;
+    }
+    .card h2 { font-size: 19px; color: #67d4a5; margin-bottom: 12px; }
+    .card h3 { font-size: 16px; color: #ffffff; margin: 14px 0 8px; }
+    .card p { color: #e2e8f0; font-size: 15px; margin-bottom: 10px; }
+    .muted { color: #94a3b8; font-size: 13px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .stat-box {
+      background: rgba(0,0,0,0.2);
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .stat-box strong { display: block; font-size: 17px; color: #67d4a5; margin-top: 4px; }
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .progress-fill { width: 2%; height: 100%; background: #109e63; border-radius: 999px; }
+    .needs-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .needs-list li {
+      background: rgba(16, 158, 99, 0.12);
+      border: 1px solid rgba(103, 212, 165, 0.25);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    .meta-table td {
+      padding: 8px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
+    }
+    .meta-table td:first-child { color: #94a3b8; width: 40%; }
+    .link-box {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 20px;
+      background: #109e63;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    footer {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .needs-list { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .gallery img { height: 240px; }
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap nav">
-  <div class="logo">HELP MALAK & FAMILY</div>
-  <div style="display:flex;gap:9px;align-items:center">
-    <button class="btn outline" id="language" type="button">English</button>
-    <a class="btn green" href="#donate" data-ar="التبرع" data-en="Donate">التبرع</a>
-  </div>
-</div></header>
 
-<section class="hero"><div class="wrap">
-  <span class="tag" data-ar="حملة مساعدة عائلية — غزة" data-en="Family support campaign — Gaza">حملة مساعدة عائلية — غزة</span>
-  <h1>MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE</h1>
-  <p data-ar="نشارك قصتنا لشرح الظروف والاحتياجات التي تمر بها أسرتنا. يمكنكم الاطلاع على تفاصيل الحملة والتبرع عبر صفحة الحملة الأصلية على Gleesome." data-en="We are sharing our story to explain our family's circumstances and needs. You can read the campaign details and donate through the original Gleesome campaign page.">نشارك قصتنا لشرح الظروف والاحتياجات التي تمر بها أسرتنا. يمكنكم الاطلاع على تفاصيل الحملة والتبرع عبر صفحة الحملة الأصلية على Gleesome.</p>
-  <div class="hero-image" role="img" aria-label="مساحة مخصصة لصورة الحملة" style="display:grid;place-items:center;padding:20px;color:#cbd5e1">
-    <span data-ar="أضيفي صورة للحملة هنا بعد التأكد من موافقة أصحابها على النشر" data-en="Add an approved campaign photo here">أضيفي صورة للحملة هنا بعد التأكد من موافقة أصحابها على النشر</span>
-  </div>
-  <a class="btn green" href="https://mygleesome.com/c/c2" target="_blank" rel="noopener noreferrer" data-ar="تبرع الآن عبر الحملة الأصلية" data-en="Donate through the original campaign">تبرع الآن عبر الحملة الأصلية</a>
-</div></section>
-
-<main class="wrap">
-<section class="card">
-  <div class="stats">
-    <div class="statrow">
-      <span><span data-ar="الهدف:" data-en="Goal:">الهدف:</span> EUR 100,000</span>
-      <span><span data-ar="المبلغ الظاهر في الصورة:" data-en="Amount shown in screenshot:">المبلغ الظاهر في الصورة:</span> EUR 5</span>
+  <header>
+    <div class="header-actions">
+      <a href="https://mygleesome.com/c/c2" target="_blank" rel="noopener" class="btn-donate-sm" data-ar="التبرع" data-en="Donate">التبرع</a>
+      <button class="btn-lang" id="langToggle" onclick="toggleLanguage()">English</button>
     </div>
-    <div class="track"><div class="fill"></div></div>
-    <p class="note" data-ar="لقطة الشاشة المرسلة تُظهر 5 يورو من هدف 100,000 يورو، ومتَبَرعاً واحداً (0.01%). قد تتغير الأرقام؛ راجعي صفحة الحملة الأصلية للأرقام الحالية." data-en="The screenshot you provided shows EUR 5 toward a EUR 100,000 goal, with 1 donor (0.01%). These figures may change; check the original campaign page for current totals.">لقطة الشاشة المرسلة تُظهر 5 يورو من هدف 100,000 يورو، ومتَبَرعاً واحداً (0.01%). قد تتغير الأرقام؛ راجعي صفحة الحملة الأصلية للأرقام الحالية.</p>
-  </div>
-  <h2 data-ar="قصة الحملة" data-en="Campaign story">قصة الحملة</h2>
-  <p data-ar="اسم صاحبة الحملة الظاهر في الصفحة هو Malak Kalash، وموقع الحملة غزة. عنوان الحملة: «MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE»." data-en="The campaign page displays Malak Kalash as the organizer and Gaza as the location. Campaign title: “MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE.”">اسم صاحبة الحملة الظاهر في الصفحة هو Malak Kalash، وموقع الحملة غزة. عنوان الحملة: «MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE».</p>
-  <div class="story">
-    <p data-ar="للاطلاع على القصة الكاملة والتحديثات والصور، يرجى زيارة صفحة الحملة الأصلية على Gleesome. هذه الصفحة التعريفية لا تستبدل صفحة الحملة ولا تجمع الأموال بنفسها." data-en="For the full story, updates, and photos, please visit the original Gleesome campaign page. This information page does not replace the campaign page and does not collect money itself.">للاطلاع على القصة الكاملة والتحديثات والصور، يرجى زيارة صفحة الحملة الأصلية على Gleesome. هذه الصفحة التعريفية لا تستبدل صفحة الحملة ولا تجمع الأموال بنفسها.</p>
-  </div>
-</section>
+    <div class="brand">HELP MALAK & FAMILY</div>
+  </header>
 
-<section class="card">
-  <h2 data-ar="صور وتحديثات الحملة" data-en="Campaign photos and updates">صور وتحديثات الحملة</h2>
-  <p class="muted" data-ar="يمكن إضافة صور مختارة من الحملة بعد التأكد من موافقة الأشخاص الظاهرين فيها، وحماية خصوصية الأطفال والبيانات الشخصية." data-en="You may add selected campaign photos after confirming consent from people shown and protecting children's privacy and personal information.">يمكن إضافة صور مختارة من الحملة بعد التأكد من موافقة الأشخاص الظاهرين فيها، وحماية خصوصية الأطفال والبيانات الشخصية.</p>
-  <div class="gallery">
-    <div class="hero-image" style="aspect-ratio:4/3;margin:0;display:grid;place-items:center;padding:12px;color:#cbd5e1">صورة 1</div>
-    <div class="hero-image" style="aspect-ratio:4/3;margin:0;display:grid;place-items:center;padding:12px;color:#cbd5e1">صورة 2</div>
-    <div class="hero-image" style="aspect-ratio:4/3;margin:0;display:grid;place-items:center;padding:12px;color:#cbd5e1">صورة 3</div>
-  </div>
-</section>
+  <main>
+    <div class="badge" data-ar="حملة مساعدة عائلية — غزة" data-en="Family Aid Campaign — Gaza">حملة مساعدة عائلية — غزة</div>
 
-<section class="card" id="donate">
-  <h2 data-ar="التبرع الآمن" data-en="Donate securely">التبرع الآمن</h2>
-  <div class="donate">
-    <h3 data-ar="ادعموا الحملة عبر رابطها الأصلي" data-en="Support through the original campaign">ادعموا الحملة عبر رابطها الأصلي</h3>
-    <p data-ar="يتم التبرع على منصة Gleesome، وليس من خلال هذا الموقع التعريفي. تحققوا من اسم الحملة والمعلومات قبل إتمام أي دفعة." data-en="Donations are made on Gleesome, not through this information website. Verify the campaign name and details before completing any payment.">يتم التبرع على منصة Gleesome، وليس من خلال هذا الموقع التعريفي. تحققوا من اسم الحملة والمعلومات قبل إتمام أي دفعة.</p>
-    <a class="btn green" href="https://mygleesome.com/c/c2" target="_blank" rel="noopener noreferrer">تبرع الآن — Gleesome</a>
-    <p class="note"><a href="https://mygleesome.com/c/c2" target="_blank" rel="noopener noreferrer">https://mygleesome.com/c/c2</a></p>
-  </div>
-</section>
+    <h1>MY NAME IS MALAK. MY FAMILY NEEDS YOUR HELP TO SURVIVE</h1>
 
-<section class="card">
-  <h2 data-ar="الشفافية والخصوصية" data-en="Transparency and privacy">الشفافية والخصوصية</h2>
-  <p data-ar="يرجى الرجوع إلى صفحة الحملة الأصلية للاطلاع على التحديثات والتفاصيل. لا تنشري أرقام الهوية أو الحسابات البنكية أو العناوين أو الوثائق الطبية الكاملة على الإنترنت." data-en="Please refer to the original campaign page for updates and details. Do not publish ID numbers, bank account details, addresses, or complete medical documents online.">يرجى الرجوع إلى صفحة الحملة الأصلية للاطلاع على التحديثات والتفاصيل. لا تنشري أرقام الهوية أو الحسابات البنكية أو العناوين أو الوثائق الطبية الكاملة على الإنترنت.</p>
-  <div class="notice" data-ar="تنبيه: هذا الموقع صفحة تعريفية مستقلة، وليس تابعاً لمنصة Gleesome ولا يعالج المدفوعات. يجب أن يتولى شخص بالغ موثوق إدارة أي أموال أو ترتيبات مالية، مع التأكد من أهلية الحملة ووسيلة السحب." data-en="Notice: This is an independent information page, not affiliated with Gleesome and does not process payments. A trusted adult should manage any funds or financial arrangements and confirm campaign and withdrawal eligibility.">تنبيه: هذا الموقع صفحة تعريفية مستقلة، وليس تابعاً لمنصة Gleesome ولا يعالج المدفوعات. يجب أن يتولى شخص بالغ موثوق إدارة أي أموال أو ترتيبات مالية، مع التأكد من أهلية الحملة ووسيلة السحب.</div>
-</section>
-</main>
-<footer><strong>HELP MALAK & FAMILY</strong><p data-ar="شكراً لاهتمامكم ووقتكم." data-en="Thank you for your care and time.">شكراً لاهتمامكم ووقتكم.</p></footer>
+    <p class="subtitle"
+       data-ar="نحن في حرب مستمرة منذ أكثر من 3 سنوات. قفوا بجانبنا وساعدونا من خلال التبرع للحملة أو مشاركة رابطها ليصل صوتنا."
+       data-en="We have been at war for 3 years and more. Stand by us and help us by donating to the campaign or sharing our campaign.">
+      نحن في حرب مستمرة منذ أكثر من 3 سنوات. قفوا بجانبنا وساعدونا من خلال التبرع للحملة أو مشاركة رابطها ليصل صوتنا.
+    </p>
 
-<script>
-const langButton=document.getElementById('language');
-langButton.addEventListener('click',()=>{
-  const arabic=document.documentElement.lang==='ar';
-  document.documentElement.lang=arabic?'en':'ar';
-  document.documentElement.dir=arabic?'ltr':'rtl';
-  langButton.textContent=arabic?'العربية':'English';
-  document.querySelectorAll('[data-ar][data-en]').forEach(el=>{
-    el.textContent=arabic?el.dataset.en:el.dataset.ar;
-  });
-});
-</script>
+    <div class="main-image">
+      <img src="https://mygleesome.com/public/uploads/f6178ecf2f705da2125cac6ec71abb0a.jpg" alt="Malak Family Campaign Gaza" />
+    </div>
+
+    <div class="cta-group">
+      <a href="https://mygleesome.com/c/c2" target="_blank" rel="noopener" class="btn-primary"
+         data-ar="تبرع الآن عبر الحملة الأصلية"
+         data-en="Donate Now via Official Campaign">
+        تبرع الآن عبر الحملة الأصلية
+      </a>
+      <button class="btn-share" id="shareBtn" onclick="copyCampaignLink()"
+              data-ar="نسخ رابط الحملة للمشاركة"
+              data-en="Copy Campaign Link">
+        نسخ رابط الحملة للمشاركة
+      </button>
+    </div>
+
+    <div class="card">
+      <h2 data-ar="حالة التبرعات والهدف" data-en="Fundraising Progress & Goal">حالة التبرعات والهدف</h2>
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="muted" data-ar="الهدف المطلوب" data-en="Campaign Goal">الهدف المطلوب</span>
+          <strong>EUR 100,000.00</strong>
+        </div>
+        <div class="stat-box">
+          <span class="muted" data-ar="المبلغ الذي تم جمعه" data-en="Amount Raised">المبلغ الذي تم جمعه</span>
+          <strong>EUR 5.00 (0.01%)</strong>
+        </div>
+        <div class="stat-box">
+          <span class="muted" data-ar="الداعمون" data-en="Supporters">الداعمون</span>
+          <strong data-ar="1 متبرع" data-en="1 Supporter">1 متبرع</strong>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <p class="muted"
+         data-ar="الأرقام تُحدَّث باستمرار على منصة Gleesome؛ راجع صفحة الحملة الأصلية للاطلاع على أحدث التبرعات."
+         data-en="Figures update continuously on Gleesome; please check the official campaign page for live donation updates.">
+        الأرقام تُحدَّث باستمرار على منصة Gleesome؛ راجع صفحة الحملة الأصلية للاطلاع على أحدث التبرعات.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 data-ar="قصة العائلة" data-en="The Story">قصة العائلة</h2>
+      <p data-ar="اسمي ملاك كلش (Malak Kalash). أنا متزوجة ولديّ طفلان. أُصيب زوجي خلال الحرب وفقد ساقه. فقدت عائلتنا منزلنا ونحن نعيش حالياً في خيمة لا توفر حماية كافية من برد الشتاء القارس ولا حر الصيف الشديد."
+         data-en="My name is Malak Kallash. I'm married and have two children. My spouse was injured during the war and lost a leg. Our family has lost our home and is living in a tent that offers little protection from winter cold or summer heat.">
+        اسمي ملاك كلش (Malak Kalash). أنا متزوجة ولديّ طفلان. أُصيب زوجي خلال الحرب وفقد ساقه. فقدت عائلتنا منزلنا ونحن نعيش حالياً في خيمة لا توفر حماية كافية من برد الشتاء القارس ولا حر الصيف الشديد.
+      </p>
+      <p data-ar="نطلب مساعدتكم لتوفير الطعام والدواء والاحتياجات الأساسية لعائلتنا. شكراً لكل من يقف بجانبنا ويدعم أسرتنا."
+         data-en="We're asking for help with food, medicine and other basic needs. Thank you for supporting our family.">
+        نطلب مساعدتكم لتوفير الطعام والدواء والاحتياجات الأساسية لعائلتنا. شكراً لكل من يقف بجانبنا ويدعم أسرتنا.
+      </p>
+
+      <h3 data-ar="كيف ستساعد مساهمتكم؟ (أوجه الدعم)" data-en="How Your Support Will Help">كيف ستساعد مساهمتكم؟ (أوجه الدعم)</h3>
+      <ul class="needs-list">
+        <li data-ar="توفير مقومات الحياة الأساسية" data-en="Basic survival essentials">توفير مقومات الحياة الأساسية</li>
+        <li data-ar="الطعام والشراب للأطفال والعائلة" data-en="Food and clean drinking water">الطعام والشراب للأطفال والعائلة</li>
+        <li data-ar="الملابس ومستلزمات المعيشة في الخيمة" data-en="Clothing & shelter necessities">الملابس ومستلزمات المعيشة في الخيمة</li>
+        <li data-ar="العلاج والرعاية الطبية لزوجي المصاب" data-en="Medical care & treatment for my injured husband">العلاج والرعاية الطبية لزوجي المصاب</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2 data-ar="صور من الحملة (8 صور)" data-en="A Closer Look — Campaign Photos (8)">صور من الحملة (8 صور)</h2>
+      <p class="muted" data-ar="جميع الصور أدناه مأخوذة مباشرة من صفحة الحملة الرسمية على Gleesome:" data-en="All photos below are from the official Gleesome campaign page:">
+        جميع الصور أدناه مأخوذة مباشرة من صفحة الحملة الرسمية على Gleesome:
+      </p>
+      <div class="gallery">
+        <img src="https://mygleesome.com/public/uploads/f6178ecf2f705da2125cac6ec71abb0a.jpg" alt="Campaign Photo 1" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/f973196439e04d648d2115adea190e7e.jpg" alt="Campaign Photo 2" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/0374be6b92e4ce7a8a186191faccd3cd.jpg" alt="Campaign Photo 3" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/5beafd6685eafc0ad5140226eea8a01b.jpg" alt="Campaign Photo 4" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/4dc2a7d335f0ced0c55e352a4435b58a.jpg" alt="Campaign Photo 5" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/fc9050a56363c87e66fa9961be42d5ea.jpg" alt="Campaign Photo 6" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/a8ebf7ddd26d3cb9b79e15484c78407e.jpg" alt="Campaign Photo 7" loading="lazy" />
+        <img src="https://mygleesome.com/public/uploads/827f85cfa8336988a7e4f6c4ec9828cb.jpg" alt="Campaign Photo 8" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 data-ar="بيانات الحملة والداعمون" data-en="Campaign Details & Supporters">بيانات الحملة والداعمون</h2>
+      <table class="meta-table">
+        <tr>
+          <td data-ar="منظمة الحملة والمستفيد" data-en="Organizer & Beneficiary">منظمة الحملة والمستفيد</td>
+          <td>Malak Kalash</td>
+        </tr>
+        <tr>
+          <td data-ar="الموقع" data-en="Location">الموقع</td>
+          <td data-ar="غزة (Gaza)" data-en="Gaza">غزة (Gaza)</td>
+        </tr>
+        <tr>
+          <td data-ar="تاريخ النشر" data-en="Published Date">تاريخ النشر</td>
+          <td>Oct 29, 2026</td>
+        </tr>
+        <tr>
+          <td data-ar="وسيلة الدفع الآمن" data-en="Payment Processor">وسيلة الدفع الآمن</td>
+          <td>Gleesome (Stripe)</td>
+        </tr>
+        <tr>
+          <td data-ar="المساهمون" data-en="Recent Supporter">المساهمون</td>
+          <td>David Catalano — EUR 5.00 (Oct 31, 2026)</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 data-ar="التبرع الآمن والشفافية" data-en="Safe Donation & Transparency">التبرع الآمن والشفافية</h2>
+      <p data-ar="يتم التبرع مباشرة عبر منصة Gleesome الرسمية باستخدام بوابة الدفع الآمنة Stripe، وليس من خلال هذا الموقع التعريفي. يرجى التحقق من عنوان الحملة قبل إتمام أي دفعة."
+         data-en="Donations are processed securely on the official Gleesome platform via Stripe, not through this informational page. Please verify the campaign title before completing any payment.">
+        يتم التبرع مباشرة عبر منصة Gleesome الرسمية باستخدام بوابة الدفع الآمنة Stripe، وليس من خلال هذا الموقع التعريفي. يرجى التحقق من عنوان الحملة قبل إتمام أي دفعة.
+      </p>
+      <p class="muted"
+         data-ar="تنبيه: هذا الموقع صفحة تعريفية مستقلة لعائلة ملاك كلش ومربوطة مباشرة برابط الحملة الرسمي: https://mygleesome.com/c/c2"
+         data-en="Note: This website is an independent informational page for Malak Kalash's family linked directly to the official campaign: https://mygleesome.com/c/c2">
+        تنبيه: هذا الموقع صفحة تعريفية مستقلة لعائلة ملاك كلش ومربوطة مباشرة برابط الحملة الرسمي: https://mygleesome.com/c/c2
+      </p>
+      <a href="https://mygleesome.com/c/c2" target="_blank" rel="noopener" class="link-box"
+         data-ar="الانتقال إلى صفحة التبرع — Gleesome" data-en="Go to Donation Page — Gleesome">
+        الانتقال إلى صفحة التبرع — Gleesome
+      </a>
+    </div>
+
+    <footer>
+      <strong>HELP MALAK & FAMILY</strong>
+      <p style="margin-top:6px;" data-ar="شكراً لاهتمامكم ووقتكم ودعمكم لعائلتنا في غزة." data-en="Thank you for your care, time, and support for our family in Gaza.">
+        شكراً لاهتمامكم ووقتكم ودعمكم لعائلتنا في غزة.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    let currentLang = 'ar';
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('langToggle').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + currentLang);
+      });
+    }
+
+    function copyCampaignLink() {
+      const url = 'https://mygleesome.com/c/c2';
+      navigator.clipboard.writeText(url).then(() => {
+        const btn = document.getElementById('shareBtn');
+        btn.textContent = currentLang === 'ar' ? 'تم نسخ الرابط بنجاح ✓' : 'Link Copied ✓';
+        setTimeout(() => {
+          btn.textContent = btn.getAttribute('data-' + currentLang);
+        }, 2500);
+      });
+    }
+  </script>
+
 </body>
 </html>
